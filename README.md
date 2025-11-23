@@ -1,66 +1,97 @@
 # VITyarthi-project
-Simple Python Blackjack ♠️♦️
+College Money Manager v2.0 🎓💸
 
-A lightweight, text-based command-line implementation of the classic casino game Blackjack. This project simulates the game logic, including betting, deck shuffling, and dealer AI.
+A smart, statistics-driven Command Line Interface (CLI) application designed to help college students track expenses, analyze spending habits, and stick to a monthly budget.
 
-🎮 Features
+🚀 Overview
 
-Betting System: Start with $1,000 and try to increase your bankroll.
-Round Tracking: The game tracks and displays the specific round number for every win/loss event (e.g., "Dealer won Round 3").
-Dealer Logic: The dealer automatically plays according to standard rules (hits until reaching 17).
-Ace Handling: Automatically calculates Aces as 1 or 11 to prevent busting.
-Infinite Play: The game continues until you run out of money or choose to quit.
+College Money Manager goes beyond simple expense tracking. It utilizes basic statistical methods (Standard Deviation) to analyze your spending volatility and predicts a "Safe Spending Limit" for the next day. It features a persistent login system, visual data representation, and report generation.
 
-🚀 How to Run
+✨ Key Features
 
-Prerequisites
+🔐 User Authentication: Secure registration and login system with password protection and auto-generated Student IDs.
+💾 Data Persistence: Automatically saves all user profiles and expense history to a local college_data.json file.
+🧠 Smart Backfill: Automatically detects if you haven't logged in for a few days and prompts you to fill in missing expenses sequentially.
+📊 Statistical Analysis: Calculates:
 
-You need Python 3.6+ installed on your computer (this project uses f-strings).
-Installation
-Clone this repository or download the source code.
-git clone [https://github.com/yourusername/blackjack-python.git](https://github.com/yourusername/blackjack-python.git)
+Total Expenditure
 
-Navigate to the directory.
+Daily Average
 
-cd blackjack-python
+Standard Deviation (spending consistency)
 
-
-Usage
-Run the script using Python:
-python blackjack.py
-
-
-📜 How to Play
-
-Place your bet: You enter an amount (up to your total current money).
-Check your hand: You get two cards, and the dealer shows one.
-
-Choose action:
-Type h to Hit (take another card).
-Type s to Stand (keep your current hand).
-
-Win Condition:
-Get closer to 21 than the dealer without going over.
-If you bust (go over 21), you lose immediately.
-If the dealer busts, you win.
-📸 Example Output
-
---- Round 1 (Money: $1000) ---
-Bet amount: 100
-Your Hand: [('K', 'Hearts'), ('4', 'Clubs')] (Score: 14)
-Dealer shows: ('9', 'Spades')
-Hit or Stand? (h/s): h
-Your Hand: [('K', 'Hearts'), ('4', 'Clubs'), ('5', 'Diamonds')] (Score: 19)
-Dealer shows: ('9', 'Spades')
-Hit or Stand? (h/s): s
-
-Final Scores -> You: 19 | Dealer: 18
-You won Round 1
-
+📈 ASCII Visualizer: Generates a text-based bar graph in the console to visualize spending spikes (1 Star ≈ ₹50).
+🔮 Predictive Budgeting: Suggests a "Safe Limit" for tomorrow based on your historical spending variance.
+📄 Report Export: Exports a detailed receipt of your expenses to a text file ([Name]_report.txt) for external record-keeping.
 
 🛠️ Built With
 
-Python - Core logic
+Language: Python 3.x
 
-Random Module - Card shuffling
+Libraries: json, math, random, os (Standard Library - No external pip installs required!)
 
+📦 Installation & Usage
+
+Clone the Repository
+
+git clone [https://github.com/yourusername/college-money-manager.git](https://github.com/yourusername/college-money-manager.git)
+cd college-money-manager
+
+
+Run the Application
+
+python college_manager.py
+
+
+(Note: Ensure your script file is named college_manager.py or replace with your filename)
+
+Follow the On-Screen Prompts
+
+Register a new account to get your Student ID.
+Login using your ID and Password.
+Enter the current Date (e.g., if today is the 15th, enter 15).
+The system will guide you through the rest!
+
+📂 Project Structure
+
+├── college_manager.py    # Main application source code
+├── college_data.json     # Database (Auto-generated on first run)
+├── Alice_report.txt      # Example exported report (Auto-generated)
+└── README.md             # Project documentation
+
+
+📸 Example Output
+
+Spending Graph:
+
+--- SPENDING GRAPH ---
+(Each * is approx Rs 50)
+Day 1: ** (100)
+Day 2: **** (200)
+Day 3: * (50)
+-------------------------
+
+
+Prediction:
+
+PREDICTION:
+Safe limit for tomorrow: Rs 185
+
+
+🤝 Contributing
+
+Contributions are welcome! If you have ideas for improvements (like adding GUI or Category tagging), feel free to fork the repository and submit a pull request.
+
+Fork the Project
+
+Create your Feature Branch (git checkout -b feature/AmazingFeature)
+
+Commit your Changes (git commit -m 'Add some AmazingFeature')
+
+Push to the Branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
+
+📄 License
+
+This project is open source and available under the MIT License.
